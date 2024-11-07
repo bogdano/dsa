@@ -8,9 +8,9 @@ obj = segmentationClass.segmentationClass()
 
 # INPUT --> LOAD IMAGE
 ##########################################################################
-# file_name = 'test-10x10.png'                # Choose image file name
-# file_name = 'test-15x15.png'                # Runs for ~10 seconds
-file_name = 'test-30x30.png'                # Runs for ~2 minutes
+# file_name = 'test-10x10.png'                
+# file_name = 'test-15x15.png'                
+file_name = 'test-30x30.png'                
 
 
 # INPUT --> SET SEGMENTATION PARAMETERS
@@ -20,7 +20,7 @@ file_name = 'test-30x30.png'                # Runs for ~2 minutes
 obj.x_a = np.array([14,18]);                # 30x30 image
 
 obj.x_b = np.array([0,0]);                  # Background pixel coordinate
-obj.p0 = 2;                                 # p0 parameter
+obj.p0 = 1;                                 # p0 parameter
 
 # SEGMENT THE IMAGE
 I = Image.open(file_name).convert('RGB')    # convert to RGB, just in case
@@ -39,5 +39,3 @@ plt.show()
 # PRINT ADJACENCY MATRIX (0,0) and (1,0)
 A = obj.constructAdjacencyMatrix(I)
 print(A[[0,3],:])
-
-# STICK A FORK IN ME; I'M DONE.
